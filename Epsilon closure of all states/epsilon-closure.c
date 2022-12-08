@@ -27,7 +27,7 @@ void display(int n)
         printf(" %s", result[k]);
         k++;
     }
-    printf(" } \n\n\n");
+    printf(" } \n");
 }
 
 void findclosure(char state[], int *i)
@@ -59,8 +59,9 @@ void findclosure(char state[], int *i)
 int main()
 {
 
-    char state[3];
-    int end, i = 0, n, k = 0;
+    char state[3], st1[3], st2[3], inp[3];
+    int end, i = 0, n, k = 0, t;
+    FILE *file = fopen("input.dat", "w");
     char state1[3], input[3], state2[3];
     printf("\n Enter the no of states: ");
     scanf("%d", &n);
@@ -69,7 +70,15 @@ int main()
     {
         scanf("%s", states[k]);
     }
-
+    printf("Enter number of transitions:");
+    scanf("%d", &t);
+    printf("Enter transitions\n");
+    for (k = 0; k < t; k++)
+    {
+        scanf("%s%s%s", st1, inp, st2);
+        fprintf(file, "%s %s %s\n", st1, inp, st2);
+    }
+    fclose(file);
     for (k = 0; k < n; k++)
     {
         i = 0;
@@ -79,6 +88,5 @@ int main()
         findclosure(state, &i);
         display(i);
     }
-
     return 0;
 }
