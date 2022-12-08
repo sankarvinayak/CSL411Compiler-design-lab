@@ -1,4 +1,4 @@
-
+//E3 enfa to nfa
 #include <stdio.h>
 #include <stdlib.h>
 struct node
@@ -191,4 +191,3 @@ void main()
 	findfinalstate();
 	printf("\n");
 }
-
