@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-struct node{
+struct node
+{
   int st;
   struct node *link;
 };
-struct node1{
+struct node1
+{
   int nst[20];
 };
 void insert(int, char, int);
@@ -13,21 +15,23 @@ void findfinalstate(void);
 int insertdfastate(struct node1);
 int compare(struct node1, struct node1);
 void printnewstate(struct node1);
-static int set[20], nostate, noalpha, s, notransition, nofinal, start,finalstate[20], r, buffer[20];
+static int set[20], nostate, noalpha, s, notransition, nofinal, start, finalstate[20], r, buffer[20];
 char c;
 int complete = -1;
 char alphabet[20];
 static int eclosure[20][20] = {0};
 struct node1 hash[20];
 struct node *transition[20][20] = {NULL};
-void main(){
+void main()
+{
   int i, j, k, m, t, n, l;
   struct node *temp;
   struct node1 newstate = {0}, tmpstate = {0};
   printf("\nEnter No of alphabets and alphabets?\n");
   scanf("%d", &noalpha);
   getchar();
-  for (i = 0; i < noalpha; i++)  {
+  for (i = 0; i < noalpha; i++)
+  {
     alphabet[i] = getchar();
     getchar();
   }
@@ -43,11 +47,13 @@ void main(){
   printf("Enter no of transition?\n");
   scanf("%d", &notransition);
   printf("Enter transition?\n");
-  for (i = 0; i < notransition; i++)  {
+  for (i = 0; i < notransition; i++)
+  {
     scanf("%d %c%d", &r, &c, &s);
     insert(r, c, s);
   }
-  for (i = 0; i < 20; i++)  {
+  for (i = 0; i < 20; i++)
+  {
     for (j = 0; j < 20; j++)
       hash[i].nst[j] = 0;
   }
@@ -57,19 +63,25 @@ void main(){
   printf("Transitions of DFA\n");
   newstate.nst[start] = start;
   insertdfastate(newstate);
-  while (i != complete)  {
+  while (i != complete)
+  {
     i++;
     newstate = hash[i];
-    for (k = 0; k < noalpha; k++)    {
+    for (k = 0; k < noalpha; k++)
+    {
       c = 0;
       for (j = 1; j <= nostate; j++)
         set[j] = 0;
-      for (j = 1; j <= nostate; j++)      {
+      for (j = 1; j <= nostate; j++)
+      {
         l = newstate.nst[j];
-        if (l != 0)        {
+        if (l != 0)
+        {
           temp = transition[l][k];
-          while (temp != NULL)          {
-            if (set[temp->st] == 0)            {
+          while (temp != NULL)
+          {
+            if (set[temp->st] == 0)
+            {
               c++;
               set[temp->st] = temp->st;
             }
@@ -77,7 +89,8 @@ void main(){
           }
         }
       }
-      if (c != 0)      {
+      if (c != 0)
+      {
         for (m = 1; m <= nostate; m++)
           tmpstate.nst[m] = set[m];
         insertdfastate(tmpstate);
@@ -86,7 +99,8 @@ void main(){
         printnewstate(tmpstate);
         printf("\n");
       }
-      else      {
+      else
+      {
         printnewstate(newstate);
         printf("%c\t", alphabet[k]);
         printf("NULL\n");
@@ -105,9 +119,11 @@ void main(){
   findfinalstate();
   printf("\n");
 }
-int insertdfastate(struct node1 newstate){
+int insertdfastate(struct node1 newstate)
+{
   int i;
-  for (i = 0; i <= complete; i++)  {
+  for (i = 0; i <= complete; i++)
+  {
     if (compare(hash[i], newstate))
       return 0;
   }
@@ -115,19 +131,23 @@ int insertdfastate(struct node1 newstate){
   hash[complete] = newstate;
   return 1;
 }
-int compare(struct node1 a, struct node1 b){
+int compare(struct node1 a, struct node1 b)
+{
   int i;
-  for (i = 1; i <= nostate; i++)  {
+  for (i = 1; i <= nostate; i++)
+  {
     if (a.nst[i] != b.nst[i])
       return 0;
   }
   return 1;
 }
-void insert(int r, char c, int s){
+void insert(int r, char c, int s)
+{
   int j;
   struct node *temp;
   j = findalpha(c);
-  if (j == 999)  {
+  if (j == 999)
+  {
     printf("error\n");
     exit(0);
   }
@@ -136,19 +156,25 @@ void insert(int r, char c, int s){
   temp->link = transition[r][j];
   transition[r][j] = temp;
 }
-int findalpha(char c){
+int findalpha(char c)
+{
   int i;
   for (i = 0; i < noalpha; i++)
     if (alphabet[i] == c)
       return i;
   return (999);
 }
-void findfinalstate(){
+void findfinalstate()
+{
   int i, j, k, t;
-  for (i = 0; i <= complete; i++)  {
-    for (j = 1; j <= nostate; j++)    {
-      for (k = 0; k < nofinal; k++)      {
-        if (hash[i].nst[j] == finalstate[k])        {
+  for (i = 0; i <= complete; i++)
+  {
+    for (j = 1; j <= nostate; j++)
+    {
+      for (k = 0; k < nofinal; k++)
+      {
+        if (hash[i].nst[j] == finalstate[k])
+        {
           printnewstate(hash[i]);
           printf("\t");
           j = nostate;
@@ -158,10 +184,12 @@ void findfinalstate(){
     }
   }
 }
-void printnewstate(struct node1 state){
+void printnewstate(struct node1 state)
+{
   int j;
   printf("{");
-  for (j = 1; j <= nostate; j++)  {
+  for (j = 1; j <= nostate; j++)
+  {
     if (state.nst[j] != 0)
       printf("q%d,", state.nst[j]);
   }
