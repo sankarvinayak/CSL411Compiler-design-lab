@@ -522,8 +522,8 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "lex.l"
-#line 2 "lex.l"
+#line 1 "lexc.l"
+#line 2 "lexc.l"
 	int COMMENT=0;
 #line 528 "lex.yy.c"
 #line 529 "lex.yy.c"
@@ -743,7 +743,7 @@ YY_DECL
 		}
 
 	{
-#line 5 "lex.l"
+#line 5 "lexc.l"
 
 #line 748 "lex.yy.c"
 
@@ -804,117 +804,117 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 6 "lex.l"
+#line 6 "lexc.l"
 {printf("%s is a preprocessor directive",yytext);}
 	YY_BREAK
 case 2:
-#line 8 "lex.l"
+#line 8 "lexc.l"
 case 3:
-#line 9 "lex.l"
+#line 9 "lexc.l"
 case 4:
-#line 10 "lex.l"
+#line 10 "lexc.l"
 case 5:
-#line 11 "lex.l"
+#line 11 "lexc.l"
 case 6:
-#line 12 "lex.l"
+#line 12 "lexc.l"
 case 7:
-#line 13 "lex.l"
+#line 13 "lexc.l"
 case 8:
-#line 14 "lex.l"
+#line 14 "lexc.l"
 case 9:
-#line 15 "lex.l"
+#line 15 "lexc.l"
 case 10:
-#line 16 "lex.l"
+#line 16 "lexc.l"
 case 11:
-#line 17 "lex.l"
+#line 17 "lexc.l"
 case 12:
-#line 18 "lex.l"
+#line 18 "lexc.l"
 case 13:
-#line 19 "lex.l"
+#line 19 "lexc.l"
 case 14:
-#line 20 "lex.l"
+#line 20 "lexc.l"
 case 15:
-#line 21 "lex.l"
+#line 21 "lexc.l"
 case 16:
-#line 22 "lex.l"
+#line 22 "lexc.l"
 case 17:
-#line 23 "lex.l"
+#line 23 "lexc.l"
 case 18:
 YY_RULE_SETUP
-#line 23 "lex.l"
+#line 23 "lexc.l"
 {printf(" keyword" );}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 24 "lex.l"
+#line 24 "lexc.l"
 {COMMENT=1;printf(" comment ");}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 25 "lex.l"
+#line 25 "lexc.l"
 {if(!COMMENT)printf(" plus ");}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 26 "lex.l"
+#line 26 "lexc.l"
 {if(!COMMENT)printf(" minus ");}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 27 "lex.l"
+#line 27 "lexc.l"
 {if(!COMMENT)printf(" multiplication ");}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 28 "lex.l"
+#line 28 "lexc.l"
 {if(!COMMENT)printf(" division ");}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 29 "lex.l"
+#line 29 "lexc.l"
 {if(!COMMENT)printf(" String");}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 30 "lex.l"
+#line 30 "lexc.l"
 {if(!COMMENT)printf(" Number");}
 	YY_BREAK
 case 26:
-#line 32 "lex.l"
+#line 32 "lexc.l"
 case 27:
-#line 33 "lex.l"
+#line 33 "lexc.l"
 case 28:
-#line 34 "lex.l"
+#line 34 "lexc.l"
 case 29:
-#line 35 "lex.l"
+#line 35 "lexc.l"
 case 30:
 YY_RULE_SETUP
-#line 35 "lex.l"
+#line 35 "lexc.l"
 {if(!COMMENT) printf(" Relational operatior ");}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 36 "lex.l"
+#line 36 "lexc.l"
 {if(!COMMENT) printf(" Asssignment operatior ");}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 37 "lex.l"
+#line 37 "lexc.l"
 {if(!COMMENT) printf(" Block begin");}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 38 "lex.l"
+#line 38 "lexc.l"
 {if(!COMMENT) printf(" Block end ");}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 39 "lex.l"
+#line 39 "lexc.l"
 {if(!COMMENT) printf(" Identifier ");}
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 40 "lex.l"
+#line 40 "lexc.l"
 ECHO;
 	YY_BREAK
 #line 920 "lex.yy.c"
@@ -1922,7 +1922,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 40 "lex.l"
+#line 40 "lexc.l"
 
 int yywrap(){
 	return 1;

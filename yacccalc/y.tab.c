@@ -69,15 +69,10 @@
 /* First part of user prologue.  */
 #line 1 "yacc.y"
 
-
-    #include<stdio.h>
-
+    #include <stdio.h>
     int flag=0;
 
-   
-
-
-#line 81 "y.tab.c"
+#line 76 "y.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -550,7 +545,7 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    23,    23,    31,    33,    35,    37,    39,    41,    43
+       0,    10,    10,    14,    15,    16,    17,    18,    19,    20
 };
 #endif
 
@@ -1115,61 +1110,58 @@ yyreduce:
   switch (yyn)
     {
   case 2: /* ArithmeticExpression: E  */
-#line 23 "yacc.y"
-                       {
-
-         printf("\nResult=%d\n",yyval);
-
-         return 0;
-
-        }
-#line 1127 "y.tab.c"
+#line 10 "yacc.y"
+                      {
+    printf("\nResult=%d\n",yyval);
+    return 0;
+}
+#line 1119 "y.tab.c"
     break;
 
   case 3: /* E: E '+' E  */
-#line 31 "yacc.y"
+#line 14 "yacc.y"
         {yyval=yyvsp[-2]+yyvsp[0];}
-#line 1133 "y.tab.c"
+#line 1125 "y.tab.c"
     break;
 
   case 4: /* E: E '-' E  */
-#line 33 "yacc.y"
+#line 15 "yacc.y"
         {yyval=yyvsp[-2]-yyvsp[0];}
-#line 1139 "y.tab.c"
+#line 1131 "y.tab.c"
     break;
 
   case 5: /* E: E '*' E  */
-#line 35 "yacc.y"
+#line 16 "yacc.y"
         {yyval=yyvsp[-2]*yyvsp[0];}
-#line 1145 "y.tab.c"
+#line 1137 "y.tab.c"
     break;
 
   case 6: /* E: E '/' E  */
-#line 37 "yacc.y"
+#line 17 "yacc.y"
         {yyval=yyvsp[-2]/yyvsp[0];}
-#line 1151 "y.tab.c"
+#line 1143 "y.tab.c"
     break;
 
   case 7: /* E: E '%' E  */
-#line 39 "yacc.y"
+#line 18 "yacc.y"
         {yyval=yyvsp[-2]%yyvsp[0];}
-#line 1157 "y.tab.c"
+#line 1149 "y.tab.c"
     break;
 
   case 8: /* E: '(' E ')'  */
-#line 41 "yacc.y"
+#line 19 "yacc.y"
           {yyval=yyvsp[-1];}
-#line 1163 "y.tab.c"
+#line 1155 "y.tab.c"
     break;
 
   case 9: /* E: NUMBER  */
-#line 43 "yacc.y"
-          {yyval=yyvsp[0];}
-#line 1169 "y.tab.c"
+#line 20 "yacc.y"
+         {yyval=yyvsp[0];}
+#line 1161 "y.tab.c"
     break;
 
 
-#line 1173 "y.tab.c"
+#line 1165 "y.tab.c"
 
       default: break;
     }
@@ -1362,33 +1354,15 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 47 "yacc.y"
+#line 22 "yacc.y"
 
-
-
-
-void main()
-
-{
-
-   printf("\nEnter Any Arithmetic Expression:\n");
-
-   yyparse();
-
-  if(flag==0)
-
-   printf("\n\n");
-
- 
-
+void main(){
+    printf("Enter arithmetric expression:");
+    yyparse();
+    if(flag==0)
+    printf("\n\n");
 }
-
-void yyerror()
-
-{
-
-   printf("\nInvalid\n\n");
-
-   flag=1;
-
+void yyerror(){
+    printf("\nInvalid\n");
+    flag=1;
 }

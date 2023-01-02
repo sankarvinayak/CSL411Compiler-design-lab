@@ -6,11 +6,11 @@
 %left '+''-''*''/'
 %left '('')'
 %%
-exp : exp'+'exp
-| exp'-'exp
-| exp'*'exp
-| exp'/'exp
-| '('exp')'
+E : E'+'E
+| E'-'E
+| E'*'E
+| E'/'E
+| '('E')'
 | NUMBER
 | ID ;
 %%

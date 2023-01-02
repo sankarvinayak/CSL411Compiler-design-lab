@@ -21,7 +21,7 @@ E:E'+'E {$$=$1+$3;}
 ;
 %%
 void main(){
-    printf("Enter erithmetric expression");
+    printf("Enter arithmetric expression:");
     yyparse();
     if(flag==0)
     printf("\n\n");

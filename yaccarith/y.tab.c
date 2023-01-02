@@ -160,7 +160,7 @@ enum yysymbol_kind_t
   YYSYMBOL_9_ = 9,                         /* '('  */
   YYSYMBOL_10_ = 10,                       /* ')'  */
   YYSYMBOL_YYACCEPT = 11,                  /* $accept  */
-  YYSYMBOL_exp = 12                        /* exp  */
+  YYSYMBOL_E = 12                          /* E  */
 };
 typedef enum yysymbol_kind_t yysymbol_kind_t;
 
@@ -546,7 +546,7 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,     8,     8,     9,    10,    11,    12,    13,    14
+       0,     9,     9,    10,    11,    12,    13,    14,    15
 };
 #endif
 
@@ -563,7 +563,7 @@ static const char *yysymbol_name (yysymbol_kind_t yysymbol) YY_ATTRIBUTE_UNUSED;
 static const char *const yytname[] =
 {
   "\"end of file\"", "error", "\"invalid token\"", "NUMBER", "ID", "'+'",
-  "'-'", "'*'", "'/'", "'('", "')'", "$accept", "exp", YY_NULLPTR
+  "'-'", "'*'", "'/'", "'('", "')'", "$accept", "E", YY_NULLPTR
 };
 
 static const char *
@@ -1303,7 +1303,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 15 "yacc.y"
+#line 16 "yacc.y"
 
 int main(int argc, char *argv[]) {
 printf("Enter the expression: ");
