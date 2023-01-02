@@ -44,7 +44,7 @@ void change(int p, char *res)
     {
         if (strcmp(arr[p].res, arr[i].op1) == 0)
             strcpy(arr[i].op1, res);
-        else if (strcmp(arr[p].res, arr[i].op2) == 0)
+         if (strcmp(arr[p].res, arr[i].op2) == 0)
             strcpy(arr[i].op2, res);
     }
 }
